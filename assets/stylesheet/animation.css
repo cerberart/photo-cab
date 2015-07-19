@@ -1,0 +1,150 @@
+.back-layout-panda {
+  transform:rotate(-10deg);
+/*  -webkit-animation: bg-scrolling-reverse 19s infinite;
+  -moz-animation:    bg-scrolling-reverse 19s infinite;
+  -o-animation:      bg-scrolling-reverse 19s infinite;
+  animation:         bg-scrolling-reverse 19s infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function:    linear;
+  -o-animation-timing-function:      linear;
+  animation-timing-function:         linear;*/
+}
+
+@-webkit-keyframes bg-scrolling-reverse {
+  100% { background-position: 110% 0%; }
+}
+@-moz-keyframes    bg-scrolling-reverse {
+  100% { background-position: 110% 0%; }
+}
+@-o-keyframes      bg-scrolling-reverse {
+  100% { background-position: 110% 0%; }
+}
+@keyframes         bg-scrolling-reverse {
+  100% { background-position: 110% 0%; }
+}
+
+/*________________________________________*/
+
+.warning-text {
+  -webkit-animation: trashing 1s infinite;
+  -moz-animation: trashing 1s infinite;
+  -o-animation: trashing 1s infinite;
+  animation: trashing 1s infinite;
+  -webkit-animation-timing-function: cubic-bezier(1,0,1,1);
+  -moz-animation-timing-function: cubic-bezier(1,0,1,1);
+  -o-animation-timing-function: cubic-bezier(1,0,1,1);
+  animation-timing-function: cubic-bezier(1,0,1,1);
+}
+
+@-webkit-keyframes trashing {
+  50% { transform: translateY(15px) rotateZ(1deg); }
+  100% { transform: translateY(0px) rotateZ(0deg); }
+}
+@-moz-keyframes trashing {
+  50% { transform: translateY(15px) rotateZ(1deg); }
+  100% { transform: translateY(0px) rotateZ(0deg); }
+}
+@-o-keyframes trashing {
+  50% { transform: translateY(15px); }
+  100% { transform: translateY(0px); }
+}
+@keyframes trashing {
+  50% { transform: translateY(15px) rotateZ(1deg); }
+  100% { transform: translateY(0px) rotateZ(0deg); }
+}
+
+/*________________________________________*/
+
+.start-area a {
+  -webkit-animation: round 1s infinite;
+  -moz-animation: round 1s infinite;
+  -o-animation: round 1s infinite;
+  animation: round 1s infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes round {
+  25% { transform: translate(20%,20%); opacity: .8;}
+  50% { transform: translate(0, 40%); opacity: 1; }
+  75% { transform: translate(-20%,20%); opacity: .8; }
+  100% { transform: translate(0,0); opacity: 1;}
+}
+
+@-moz-keyframes round {
+  25% { transform: translate(20%,20%); opacity: .8;}
+  50% { transform: translate(0, 40%); opacity: 1; }
+  75% { transform: translate(-20%,20%); opacity: .8; }
+  100% { transform: translate(0,0); opacity: 1;}
+}
+
+/*________________________________________*/
+
+.shoot-act-bg {
+  -webkit-animation: scale 1s infinite;
+  -moz-animation: scale 1s infinite;
+  -o-animation: scale 1s infinite;
+  animation: scale 1s infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes scale {
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@-moz-keyframes scale {
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.l-1 {
+  -webkit-animation: opacity 1s infinite;
+  -moz-animation: opacity 1s infinite;
+  -o-animation: opacity 1s infinite;
+  animation: opacity 1s infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+.l-2 {
+  -webkit-animation: opacity 1s infinite;
+  -moz-animation: opacity 1s infinite;
+  -o-animation: opacity 1s infinite;
+  animation: opacity 1s infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  animation-delay: .3s;
+}
+.l-3 {
+  -webkit-animation: opacity 1s infinite;
+  -moz-animation: opacity 1s infinite;
+  -o-animation: opacity 1s infinite;
+  animation: opacity 1s infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: .6s;
+  -moz-animation-delay: .6s;
+  animation-delay: .6s;
+}
+@-webkit-keyframes opacity {
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-moz-keyframes opacity {
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}

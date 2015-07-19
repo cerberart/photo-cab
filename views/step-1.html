@@ -1,0 +1,16 @@
+<div class="photo-preview">
+  <div class="mask"></div>
+</div>
+<div class="photo-action-controls">
+  <ul>
+    <li><a ui-sref="link.start"><</a></li>
+    <li>
+      <a href="#" ng-click="shoot()">
+        <div class="shoot-act-bg">
+          <div class="shoot-act"></div>
+        </div>
+      </a>
+    </li>
+    <li><a href="#" ng-click="goToNextSection()" ng-class="{ active : countShoots.length >= 3 }">></a></li>
+  </ul>
+</div>

@@ -1,0 +1,65 @@
+.fsp-logo {
+  text-align: left;
+  float: left;
+}
+
+.heading {
+  font: 400 48px/2 "Fira Sans", Arial, Helvetica;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.main-info {
+  font: 400 48px/2 "Fira Sans", Arial, Helvetica;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 80px;
+  width: 60px;
+  display: block;
+}
+.carrot-info {
+  float: right;
+  vertical-align: middle;
+}
+.carrot-info i {
+  width: 106px;
+  height: 136px;
+  background: url(../images/carrot-info.png) no-repeat 0 0 scroll;
+  display:block;
+}
+.is-hidden {
+  display: none;
+}
+.main-layout .is-visible {
+  display: none;
+}
+.main-layout .is-hidden {
+  display: block;
+  font-style: normal;
+}
+.carrot-layout .carrot-info i {
+  background: url(../images/carrot-info-close.png) no-repeat 0 0 scroll;
+}
+.warning-text {
+  width: 858px;
+  height: 172px;
+  margin: 0 auto;
+  background: url(../images/warning.png) no-repeat center center scroll;
+  text-align: center;
+}
+.warning-text i {
+  color: #e89223;
+  font: 400 62px "Fira Sans", Arial, Helvetica;
+  font-style: italic;
+  position: relative;
+  right: -14px;
+  top: 25px;
+}
+.start-area a {
+  display: block;
+  width: 124px;
+  height: 196px;
+  background: url(../images/touch-icon.png) no-repeat center center scroll;
+  margin: 0 auto;
+}

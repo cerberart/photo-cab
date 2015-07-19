@@ -1,0 +1,20 @@
+<div class="middle logo">
+  <img src="/assets/images/main-heading.png" alt="Фотокабина" height="212" width="705">
+  <p>Выберите 3 фото для печати</p>
+</div>
+<div class="gallery-images">
+  <div class="shooted-images-preview" ng-repeat="photo in photos | limitTo:9" style="background-image: url('{{photo.url}}')"><input type="checkbox" name="{{$index}}" id="{{$index}}"><label for="{{$index}}"></label></div>
+</div>
+<div class="photo-action-controls">
+  <ul>
+    <li><a ui-sref="link.step-1"><</a></li>
+    <li>
+      <a href="#" ng-click="shoot()">
+        <div class="shoot-act-bg">
+          <div class="shoot-act"></div>
+        </div>
+      </a>
+    </li>
+    <li><a href="#" ng-click="goToNextSection()" ng-class="{ active : countShoots.length >= 3 }">></a></li>
+  </ul>
+</div>

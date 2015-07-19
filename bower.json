@@ -1,0 +1,22 @@
+{
+  "name": "photo_fsp",
+  "version": "0.0.0",
+  "authors": [
+    "Arty Schein <artem.schein@digitalizm.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "normalize.css": "~3.0.3"
+  },
+  "devDependencies": {
+    "angular.js": "~1.3.15",
+    "angular-ui-router": "~0.2.15",
+    "lodash": "~3.10.0",
+    "angular-animate": "~1.4.3",
+    "angular-touch": "~1.4.3"
+  }
+}
