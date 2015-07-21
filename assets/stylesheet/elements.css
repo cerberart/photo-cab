@@ -2,7 +2,6 @@
   text-align: left;
   float: left;
 }
-
 .heading {
   font: 400 48px/2 "Fira Sans", Arial, Helvetica;
   color: #ffffff;
@@ -62,4 +61,105 @@
   height: 196px;
   background: url(../images/touch-icon.png) no-repeat center center scroll;
   margin: 0 auto;
+}
+.choose-photos.is-active .active-text {
+  display: block;
+}
+.choose-photos.is-active .non-active-text {
+  display: none;
+}
+.choose-photos .active-text {
+  display: none;
+}
+
+.choose-photos.is-active {
+  background: #fff;
+  color: #e89224;
+}
+.choose-photos {
+  font-size: 48px;
+  width: 525px;
+  height: 135px;
+  background: rgba(255,255,255,.9);
+  color: rgba(246,174,26,0.6);
+  position: relative;
+  border-radius: 15px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 2.7;
+}
+
+.shoot-act-bg {
+  width: 296px;
+  height: 296px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.shoot-act-bg:after {
+  content: '';
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.5);
+  z-index: -1;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  position: absolute;
+  left: -2px;
+  top: -2px;
+}
+.shoot-act-bg.is-animated:after {
+  animation: none;
+  -webkit-animation: none;
+  -moz-animation: none;
+  -o-animation: none;
+  -ms-animation: none;
+}
+.is-animated .shoot-act {
+  background-image: none;
+}
+.shoot-act {
+  width: 296px;
+  height: 296px;
+  background: url(../images/panda-action.png) no-repeat center center scroll #fff;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  position: relative;
+}
+.number {
+  position: absolute;
+  color: #f6ae1a;
+  top: 54px;
+  left: 115px;
+  opacity: 0;
+}
+.number:before {
+  width: 296px;
+  height: 296px;
+  background: #fff;
+  opacity: .9;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  position: absolute;
+  left: -115px;
+  top: -54px;
+  line-height: 1.8;
+}
+.n-1:before {
+  content: '1';
+}
+.n-2:before {
+  content: '2';
+}
+.n-3:before {
+  content: '3';
 }

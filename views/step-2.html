@@ -3,18 +3,19 @@
   <p>Выберите 3 фото для печати</p>
 </div>
 <div class="gallery-images">
-  <div class="shooted-images-preview" ng-repeat="photo in photos | limitTo:9" style="background-image: url('{{photo.url}}')"><input type="checkbox" name="{{$index}}" id="{{$index}}"><label for="{{$index}}"></label></div>
+  <div class="shooted-images-preview" ng-click="checkListChecboxes()" ng-repeat="photo in photos | limitTo:9" style="background-image: url('{{photo.url}}')"><input type="checkbox" name="{{$index}}" id="{{$index}}" ng-model="formData[photo.id]"><label for="{{$index}}"></label></div>
+  <!-- Просматривать какие фоточки выбраны -->
+    <!-- <pre ng-bind="formData | json"></pre> -->
+  <!-- Просматривать какие фоточки выбраны -->
 </div>
 <div class="photo-action-controls">
   <ul>
-    <li><a ui-sref="link.step-1"><</a></li>
+    <li><a ui-sref="link.step-1" class="is-active"><</a></li>
     <li>
-      <a href="#" ng-click="shoot()">
-        <div class="shoot-act-bg">
-          <div class="shoot-act"></div>
-        </div>
+      <a href="#" ng-click="print()">
+        <div class="choose-photos" ng-class="{ 'is-active' : pickedPhotos == 1}"><span class="non-active-text">Выберите 3 фото</span><span class="active-text">Печатать</span></div>
       </a>
     </li>
-    <li><a href="#" ng-click="goToNextSection()" ng-class="{ active : countShoots.length >= 3 }">></a></li>
+    <li><a href="#" ng-click="print()" ng-class="{ 'is-active' : pickedPhotos == 1 }" class="next-step">></a></li>
   </ul>
 </div>

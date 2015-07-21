@@ -3,14 +3,14 @@
 </div>
 <div class="photo-action-controls">
   <ul>
-    <li><a ui-sref="link.start"><</a></li>
+    <li><a ui-sref="link.start" class="is-active"><</a></li>
     <li>
-      <a href="#" ng-click="shoot()">
+      <a ng-click="shoot($event)">
         <div class="shoot-act-bg">
-          <div class="shoot-act"></div>
+          <div class="shoot-act"><span class="n-1 number">1</span><span class="n-2 number">2</span><span class="n-3 number">3</span></div>
         </div>
       </a>
     </li>
-    <li><a href="#" ng-click="goToNextSection()" ng-class="{ active : countShoots.length >= 3 }">></a></li>
+    <li><a ng-click="goToNextSection($event)" ng-class="{ active : pickedPhotos == 1 }" class="next-step">></a></li>
   </ul>
 </div>

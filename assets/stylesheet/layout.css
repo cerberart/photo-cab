@@ -1,9 +1,21 @@
 @import "fonts/Fira-master/fira.css";
 @import "elements.css";
 @import "animation.css";
+body {
+  font-family: 'Fira Sans', Arial, Helvetica;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 .container {
   height: 100%;
+  width: 1080px;
+  border: 1px solid #000;
+  margin: 0 auto;
   position: absolute;
   z-index: 1;
   top:0;
@@ -76,6 +88,13 @@ html {
 .modal-block-content {
   display: none;
 }
+.modal-block-content {
+  width: 1080px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
 .main-layout .modal-block-content.main,
 .carrot-layout .modal-block-content.carrot {
   display: block;
@@ -89,7 +108,6 @@ html {
   -o-transition: all .8s linear;
   -moz-transition: all .8s linear;
 }
-
 .modal-bg, .modal-block {
   opacity: 0;
   visibility: hidden;
@@ -115,7 +133,6 @@ html {
   -webkit-animation-delay: .8s;
   -moz-animation-delay: .8s;
   animation-delay: .8s;
-  overflow: scroll;
 }
 .modal-block-content {
   overflow: scroll;
@@ -208,6 +225,15 @@ html {
   margin: 0;
   text-align: center;
 }
+.photo-action-controls ul li:first-child a,
+.photo-action-controls ul li:last-child a {
+  opacity: 0.5;
+}
+
+.photo-action-controls ul li:first-child a.is-active,
+.photo-action-controls ul li:last-child a.is-active  {
+  opacity: 1;
+}
 .photo-action-controls ul li {
   display: table-cell;
   list-style: none;
@@ -217,31 +243,12 @@ html {
   text-align: center;
 }
 .photo-action-controls ul li a {
-  display: cell;
   height: 100%;
   width: 100%;
   font: 400 160px 'Fira Sans', Arial, Helvetica;
   text-decoration: none;
   color: #fff;
   text-align: center;
-}
-.shoot-act-bg {
-  width: 296px;
-  height: 296px;
-  background: rgba(255,255,255,0.5);
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  padding: 0;
-  margin: 0;
-}
-.shoot-act {
-  width: 296px;
-  height: 296px;
-  background: url(../images/panda-action.png) no-repeat center center scroll #fff;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
 }
 .gallery-images {
   text-align: center;

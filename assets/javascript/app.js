@@ -97,24 +97,38 @@ angular.module('photoApp', ['ui.router'])
     }
 ])
 .controller('photoController', function($rootScope, $scope, $http, $state, photoSteps, formData, mainjs) {
-  // storages for data
+  // вызывается код из фактори, туда же можно впихывать еще что угодно
   $scope.modal = mainjs.main();
+
+  //Значение локейшена, используется для класса на body, вдруг понадобится че
   $rootScope.$state = $state;
+
+  //Для каких нибудь очень важных значение, сделано через factory, можно передавать в разные контроллеры, если нужно. сейчас он для всех контроллеров один
   $rootScope.formData = formData;
+
+  //Записи пройденных этапов, хз для чего хотел делать, но пускай будет
   $rootScope.validStep = [];
-  $rootScope.PickedPhotos = {};
+
+  //Количество отщелканных фотографий
+  $rootScope.shootedPhotos = 0;
+
+  //Для выбранных фотографий, если значение 1, значит кнопки получают активный класс
+  $rootScope.pickedPhotos = 0;
+
+  //Для фотографий
   $rootScope.photos = [
-    {id: 1, url: '/assets/images/panda-action.png'},
-    {id: 2, url: '/assets/images/panda-action.png'},
-    {id: 3, url: '/assets/images/panda-action.png'},
-    {id: 4, url: '/assets/images/panda-action.png'},
-    {id: 5, url: '/assets/images/panda-action.png'},
-    {id: 6, url: '/assets/images/panda-action.png'},
-    {id: 7, url: '/assets/images/panda-action.png'},
-    {id: 8, url: '/assets/images/panda-action.png'},
-    {id: 9, url: '/assets/images/panda-action.png'},
-    {id: 10, url: '/assets/images/panda-action.png'}
+    {"id": 1, "url": '/assets/images/panda-action.png'},
+    {"id": 2, "url": '/assets/images/panda-action.png'},
+    {"id": 3, "url": '/assets/images/panda-action.png'},
+    {"id": 4, "url": '/assets/images/panda-action.png'},
+    {"id": 5, "url": '/assets/images/panda-action.png'},
+    {"id": 6, "url": '/assets/images/panda-action.png'},
+    {"id": 7, "url": '/assets/images/panda-action.png'},
+    {"id": 8, "url": '/assets/images/panda-action.png'},
+    {"id": 9, "url": '/assets/images/panda-action.png'},
+    {"id": 10, "url": '/assets/images/panda-action.png'}
   ];
+
   var nextState=function(currentState) {
     switch (currentState) {
         case 'link.start':
@@ -136,12 +150,45 @@ angular.module('photoApp', ['ui.router'])
             alert('Error. Nothing pass from states.');
     }
   };
-  $scope.goToNextSection=function() {
-    $state.go(nextState($state.current.name));
+  $scope.goToNextSection=function($event) {
+    if (angular.element($event.target).hasClass('is-active')){
+      $state.go(nextState($state.current.name));
+    } else {
+      return false;
+    }
+    // $state.go(nextState($state.current.name));
     $rootScope.validStep.push($state.current.name);
   }
-  $scope.$watch('PickedPhotos', function(newVal, oldVal){
-    console.log($rootScope.PickedPhotos);
+  $scope.checkListChecboxes=function(){
+    var theCheckboxes = $("input[type='checkbox']");
+    theCheckboxes.each(function(){
+      if (theCheckboxes.filter(":checked").length >= 3){
+        $rootScope.pickedPhotos = 1;
+      }
+      else {
+        $rootScope.pickedPhotos = 0;
+      }
+    });
+  }
+  $scope.shoot = function($event){
+    if ($('.shoot-act-bg').hasClass('is-animated')) {
+      return false;
+    } else {
+        angular.element($event.target).addClass('is-animated');
+        setTimeout(function(){
+          $('.shoot-act-bg').removeClass('is-animated');
+        }, 3200);
+        $rootScope.shootedPhotos += 1;
+    }
+    if ($rootScope.shootedPhotos >= 3) {
+      $('.next-step').addClass('is-active');
+    }
+    if ($rootScope.shootedPhotos >= 9) {
+      $rootScope.shootedPhotos = 9
+    }
+  }
+  $scope.$watch('formData', function(newVal, oldVal){
+    // console.log($rootScope.formData);
   });
 })
 .factory("mainjs", function(){
