@@ -38,20 +38,12 @@ body {
 .middle.logo {
   text-align: center;
   position: relative;
-  z-index: 5;
 }
 .middle.logo p {
   font: 400 48px/1 'Fira Sans', Arial, Helvetica;
   color: #fff;
 }
-.middle.logo p.l-1 {
-  font: 400 48px/1px 'Fira Sans', Arial, Helvetica;
-  color: #fff;
-}
-.carrot-layout .middle {
-  opacity: 0;
-  z-index: 0;
-}
+
 html {
   background: -moz-linear-gradient(top,  #f6ae1a 0%, #ffd039 100%);
   background: -webkit-linear-gradient(top,  #f6ae1a 0%,#ffd039 100%);
@@ -112,6 +104,10 @@ html {
   -o-transition: all .8s linear;
   -moz-transition: all .8s linear;
 }
+.main-logo-modal {
+  display: block;
+  margin: 0 auto;
+}
 .modal-bg, .modal-block {
   opacity: 0;
   visibility: hidden;
@@ -121,7 +117,7 @@ html {
   -moz-transition: all .8s linear;
   transform: translateY(-200%);
   position: fixed;
-  z-index: 2;
+  z-index: 5;
   top: 0;
   bottom: 0;
   left: 0;
@@ -159,22 +155,7 @@ html {
 .modal-block-content underline {
   text-decoration: underline;
 }
-.modal-block-content .disclaimer p {
-  font: 300 32px 'Fira Sans', Arial, Helvetica;
-}
-.modal-block-content.main .disclaimer p {
-  margin: 0;
-}
-.modal-block-content .qr {
-  width: 218px;
-  height: 218px;
-  margin-right: 30px;
-  float: left;
-  background: #fff;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-}
+
 .heading-64 {
   font: 500 64px 'Fira Sans', Arial, Helvetica;
   margin-top: 10px;
@@ -197,15 +178,12 @@ html {
 
 .modal-block-content.main {
   padding-right: 60px;
-}
-
-.modal-block-content.main {
   color: #ffffff;
+  padding-top: 214px;
 }
-.modal-block-content.main {
-  padding-top: 460px;
+.modal-block-content .footer-qr {
+  margin-top: 30px;
 }
-
 .modal-block-content.carrot p b {
   font: 500 48px 'Fira Sans', Arial, Helvetica;
 }
@@ -280,4 +258,33 @@ html {
 .shooted-images-preview input {
   visibility: hidden;
   opacity: 0;
+}
+.row-padding {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.link-step-3 .info-3 {
+  text-align: left;
+  margin-top: 80px;
+}
+
+.link-step-3 .middle.logo p:first-of-type {
+  margin-top: 0;
+}
+.footer-qr {
+  text-align: left;
+  color: #fff;
+}
+.footer-qr .qr {
+  margin-right: 32px;
+}
+.footer-qr p {
+  font: 400 32px 'Fira Sans';
+  margin: 0;
+}
+.footer-qr h3 {
+  font: 500 48px 'Fira Sans';
+  margin: 0;
+  text-decoration: underline;
 }

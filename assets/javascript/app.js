@@ -171,15 +171,33 @@ angular.module('photoApp', ['ui.router'])
             alert('Error. Nothing pass from states.');
     }
   };
+  $scope.modal=function(){
+    mainjs.modal();
+  }
   $scope.startWork=function(){
     $state.go(nextState($state.current.name));
   }
-  $scope.goToNextSection=function($event) {
-    if (angular.element($event.target).hasClass('is-active')){
-      $state.go(nextState($state.current.name));
+  $scope.goToPrevSection=function(){
+    if ($state.current.name == 'link.step-1') {
+      alert('1');
+      // $state.go(backState($state.current.name));
     } else {
-      return false;
+      $state.go(backState($state.current.name));
     }
+  }
+  $scope.goToNextSection=function($event) {
+    if ($state.current.name == 'link.step-1') {
+      if (angular.element($event.target).hasClass('is-active')){
+        $state.go(nextState($state.current.name));
+      } else {
+        return false;
+      }
+    }
+    if ($state.current.name == 'link.step-2') {
+      if ($rootScope.pickedPhotos == 1)
+        $state.go(nextState($state.current.name));
+    }
+
     // $state.go(nextState($state.current.name));
     $rootScope.validStep.push($state.current.name);
   }
@@ -217,10 +235,6 @@ angular.module('photoApp', ['ui.router'])
       $rootScope.shootedPhotos = 9
     }
   }
-  $scope.print = function(){
-    if ($rootScope.pickedPhotos == 1) 
-      $state.go(nextState($state.current.name));
-  }
   $scope.$watch('formData', function(newVal, oldVal){
     // console.log($rootScope.formData);
   });
@@ -229,7 +243,22 @@ angular.module('photoApp', ['ui.router'])
   return {
     main: function(){
       $doc = $(document);
-
+      setTimeout(function(){
+        var theCheckboxes = $("input[type='checkbox']");
+        var CheckboxArray = [];
+        theCheckboxes.click(function(){
+          CheckboxArray.push($(this).attr('id'));
+          var id = CheckboxArray.slice(0)[0];
+          console.log(CheckboxArray[0]);
+          if (theCheckboxes.filter(":checked").length > 3) {
+              // $(this).removeAttr("checked");
+              $('.gallery-images').find('input#' + id).removeAttr("checked");
+              CheckboxArray.shift();
+            }
+          });
+      }, 500);
+    },
+    modal: function(){
       this.modalOpen = function(type, event){
         var $type, $modal, $body, $bodyClass;
         $type = type;
@@ -252,22 +281,6 @@ angular.module('photoApp', ['ui.router'])
           $body.removeClass('layout-is-open ' + type + '-layout');
         }
       }
-
-      setTimeout(function(){
-        var theCheckboxes = $("input[type='checkbox']");
-        var CheckboxArray = [];
-        theCheckboxes.click(function(){
-          CheckboxArray.push($(this).attr('id'));
-          var id = CheckboxArray.slice(0)[0];
-          console.log(CheckboxArray[0]);
-          if (theCheckboxes.filter(":checked").length > 3) {
-              // $(this).removeAttr("checked");
-              $('.gallery-images').find('input#' + id).removeAttr("checked");
-              CheckboxArray.shift();
-            }
-          });
-      }, 500);
-
       $doc.on('click touch touchstart', '.js-open-layout', function(){
         var $type, $link;
         $link = $(this);
@@ -282,7 +295,6 @@ angular.module('photoApp', ['ui.router'])
         }
 
       });
-
     }
   }
 })

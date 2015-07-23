@@ -25,9 +25,9 @@
         <div class="back-layout-panda"></div>
         <div class="container">
           <div class="nav">
-            <a href="#" class="main-info js-open-layout" data-type="main"><i class="is-visible">i</i><i class="is-hidden">x</i></a>
+            <a class="main-info js-open-layout" data-type="main" ng-click="modal()"><i class="is-visible">i</i><i class="is-hidden">x</i></a>
             <h2 class="heading">Freaky Summer Party ‘15</h2>
-            <a href="#" class="carrot-info js-open-layout" data-type="carrot" ng-hide="$state.current.name == 'link.step-1' || $state.current.name == 'link.step-2'"><i></i></a>
+            <a class="carrot-info js-open-layout" data-type="carrot" ng-click="modal()" ng-hide="$state.current.name == 'link.step-1' || $state.current.name == 'link.step-2'"><i></i></a>
             <div class="carrot-info shooted-number" ng-show="$state.current.name == 'link.step-1' || $state.current.name == 'link.step-2'">{{shootedPhotos}}/9</div>
           </div>
           <div ui-view></div>
