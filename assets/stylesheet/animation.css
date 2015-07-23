@@ -93,16 +93,38 @@
   animation-timing-function: linear;
 }
 
+@-webkit-keyframes Animatedscale {
+  0% { transform: scale(1.2); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1.2); }
+}
+
+@-moz-keyframes Animatedscale {
+  0% { transform: scale(1.2); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1.2); }
+}
 @-webkit-keyframes scale {
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  0% { transform: scale(1.2); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1.2); }
 }
 
 @-moz-keyframes scale {
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  0% { transform: scale(1.2); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1.2); }
 }
-
+.shoot-act-bg.is-animated:after {
+  -webkit-animation: Animatedscale 1s infinite;
+  -moz-animation: Animatedscale 1s infinite;
+  -o-animation: Animatedscale 1s infinite;
+  animation: Animatedscale 1s infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
 /*________________________________________*/
 
 .l-1 {
@@ -166,17 +188,14 @@
   animation-timing-function: linear;
 }
 .is-animated .n-1:before {
-  -webkit-animation: scaleNumber .8s infinite;
-  -moz-animation: scaleNumber .8s infinite;
-  -o-animation: scaleNumber .8s infinite;
-  animation: scaleNumber .8s infinite;
+  -webkit-animation: scaleNumber 1s infinite;
+  -moz-animation: scaleNumber 1s infinite;
+  -o-animation: scaleNumber 1s infinite;
+  animation: scaleNumber 1s infinite;
   -webkit-animation-timing-function: linear;
   -moz-animation-timing-function: linear;
   -o-animation-timing-function: linear;
   animation-timing-function: linear;
-  -webkit-animation-delay: .2s;
-  -moz-animation-delay: .2s;
-  animation-delay: .2s;
 }
 .is-animated .n-2 {
   -webkit-animation: number 1s 1;
@@ -192,17 +211,14 @@
   animation-delay: 1s;
 }
 .is-animated .n-2:before {
-  -webkit-animation: scaleNumber .8s infinite;
-  -moz-animation: scaleNumber .8s infinite;
-  -o-animation: scaleNumber .8s infinite;
-  animation: scaleNumber .8s infinite;
+  -webkit-animation: scaleNumber 1s infinite;
+  -moz-animation: scaleNumber 1s infinite;
+  -o-animation: scaleNumber 1s infinite;
+  animation: scaleNumber 1s infinite;
   -webkit-animation-timing-function: linear;
   -moz-animation-timing-function: linear;
   -o-animation-timing-function: linear;
   animation-timing-function: linear;
-  -webkit-animation-delay: .2s;
-  -moz-animation-delay: .2s;
-  animation-delay: .2s;
 }
 .is-animated .n-3 {
   -webkit-animation: number 1s 1;
@@ -218,17 +234,14 @@
   animation-delay: 2s;
 }
 .is-animated .n-3:before {
-  -webkit-animation: scaleNumber .8s infinite;
-  -moz-animation: scaleNumber .8s infinite;
-  -o-animation: scaleNumber .8s infinite;
-  animation: scaleNumber .8s infinite;
+  -webkit-animation: scaleNumber 1s infinite;
+  -moz-animation: scaleNumber 1s infinite;
+  -o-animation: scaleNumber 1s infinite;
+  animation: scaleNumber 1s infinite;
   -webkit-animation-timing-function: linear;
   -moz-animation-timing-function: linear;
   -o-animation-timing-function: linear;
   animation-timing-function: linear;
-  -webkit-animation-delay: .2s;
-  -moz-animation-delay: .2s;
-  animation-delay: .2s;
 }
 @-webkit-keyframes number {
   50% { opacity: 1; }
@@ -241,15 +254,19 @@
 }
 
 @-webkit-keyframes scaleNumber {
-  50% { transform: scale(1.2); }
+  0% { transform: scale(2.5); }
+  25% { transform: scale(2.2); }
+  50% { transform: scale(2); }
   75% { transform: scale(1.5); }
-  100% { transform: scale(2); opacity: 0; }
+  100% { transform: scale(1.2); opacity: 0; }
 }
 
 @-moz-keyframes scaleNumber {
-  50% { transform: scale(1.2); }
+  0% { transform: scale(2.5); }
+  25% { transform: scale(2.2); }
+  50% { transform: scale(2); }
   75% { transform: scale(1.5); }
-  100% { transform: scale(2); opacity: 0; }
+  100% { transform: scale(1.2); opacity: 0; }
 }
 
 

@@ -1,5 +1,5 @@
 (function(){
-angular.module('photoApp', ['ui.router'])
+angular.module('photoApp', ['ui.router', 'ngTouch'])
 
 .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
   $stateProvider
@@ -171,6 +171,14 @@ angular.module('photoApp', ['ui.router'])
             alert('Error. Nothing pass from states.');
     }
   };
+  $scope.modalCancel=function(){
+    if ($rootScope.shootedPhoto == 0){
+      $state.go('link.start');
+    }
+    if ($rootScope.shootedPhoto >= 1) {
+      mainjs.modal();
+    }
+  }
   $scope.modal=(function(){
     mainjs.modal();
   })()
@@ -218,14 +226,18 @@ angular.module('photoApp', ['ui.router'])
     } else {
         $('.shoot-act-bg').addClass('is-animated');
         $('.photo-preview').addClass('is-animated');
-        $('.layout-attention').addClass('is-opened');
+        if($rootScope.shootedPhotos < 1){
+          $('.layout-attention').addClass('is-opened');
+        };
         setTimeout(function(){
           $('.layout-attention').removeClass('is-opened');
         },2800);
         setTimeout(function(){
-          $('.photo-preview').removeClass('is-animated');
           $('.shoot-act-bg').removeClass('is-animated');
-        }, 3800);
+        }, 3000);
+        setTimeout(function(){
+          $('.photo-preview').removeClass('is-animated');
+        }, 3900);
         $rootScope.shootedPhotos += 1;
     }
     if ($rootScope.shootedPhotos >= 3) {
