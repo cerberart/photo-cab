@@ -29,7 +29,7 @@ body {
   text-align: center;
   padding: 40px 75px 0px 115px;
   position: relative;
-  z-index: 6;
+  z-index: 21;
 }
 .nav .main-info, .nav .heading {
   display: inline-block;
@@ -92,7 +92,8 @@ html {
   -moz-box-sizing: border-box;
 }
 .main-layout .modal-block-content.main,
-.carrot-layout .modal-block-content.carrot {
+.carrot-layout .modal-block-content.carrot,
+.cancel-layout .modal-block-content.cancel {
   display: block;
 }
 .layout-is-open .modal-bg, .layout-is-open .modal-block  {
@@ -117,11 +118,14 @@ html {
   -moz-transition: all .8s linear;
   transform: translateY(-200%);
   position: fixed;
-  z-index: 5;
+  z-index: 17;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
+.cancel-layout .modal-bg {
+  background-color: rgba(64,64,64,0.9);
 }
 .main-layout .modal-bg {
   background-color: #195fa6;
@@ -149,8 +153,11 @@ html {
   margin-top: 0;
   padding: 0;
 }
+.text-left {
+  text-align: left;
+}
 .text-48 {
-  font: 400 48px/42px 'Fira Sans', Arial, Helvetica;
+  font: 400 48px/50px 'Fira Sans', Arial, Helvetica;
 }
 .modal-block-content underline {
   text-decoration: underline;
@@ -161,8 +168,14 @@ html {
   margin-top: 10px;
   margin-bottom: 0px;
 }
-
-.modal-block-content.carrot{
+.modal-block-content.cancel p:first-of-type {
+  margin-top: 0;
+}
+.modal-block-content.cancel {
+  text-align: center;
+  padding-top: 200px;
+}
+.modal-block-content {
   color: #ffffff;
 }
 .modal-block-content.carrot h1 {
@@ -264,7 +277,7 @@ html {
   padding-right: 60px;
 }
 
-.link-step-3 .info-3 {
+.info-3 {
   text-align: left;
   margin-top: 80px;
 }

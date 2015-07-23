@@ -159,13 +159,13 @@
   line-height: 1.8;
 }
 .n-1:before {
-  content: '1';
+  content: '3';
 }
 .n-2:before {
   content: '2';
 }
 .n-3:before {
-  content: '3';
+  content: '1';
 }
 
 .shooted-number {
@@ -219,7 +219,7 @@
 }
 
 .print-animation {
-  width: 881px;
+  width: 880px;
   height: 748px;
   margin: 0 auto;
   background-image: url(../images/print-animation.png);
@@ -239,9 +239,9 @@
 .panda-animation:after {
   position: absolute;
   content: '';
-  width: 763px;
+  width: 762px;
   height: 529px;
-  background: url(../images/panda-animation.png) no-repeat -3814px 0px;
+  background: url(../images/panda-animate.png) no-repeat 0px 0px;
   display: block;
   top: 93px;
   left: 50%;
@@ -257,4 +257,25 @@
   background: #ffffff;
   vertical-align: middle;
   text-align: center;
+}
+
+
+.button-step-1 {
+  width: 444px;
+  font: 400 48px/1 'Fira Sans';
+  display: inline-block;
+  border: 8px solid #fff;
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+}
+
+.button-step-1.begin {
+  color: #666666;
+  background: #fff;
+  margin-right: 28px;
 }

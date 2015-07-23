@@ -22,6 +22,7 @@
         <script src="/assets/javascript/main.js"></script>
     </head>
     <body ng-app="photoApp" ng-class="$state.current.name.replace('.', '-')">
+      <div ng-controller="photoController">
         <div class="back-layout-panda"></div>
         <div class="container">
           <div class="nav">
@@ -36,6 +37,6 @@
           <!-- ______________________________________ -->
           <div ng-include="'views/modals.html'" scope="" onload=""></div>
         </div>
-
+      </div>
     </body>
 </html>

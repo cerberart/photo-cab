@@ -171,16 +171,16 @@ angular.module('photoApp', ['ui.router'])
             alert('Error. Nothing pass from states.');
     }
   };
-  $scope.modal=function(){
+  $scope.modal=(function(){
     mainjs.modal();
-  }
+  })()
   $scope.startWork=function(){
     $state.go(nextState($state.current.name));
   }
   $scope.goToPrevSection=function(){
     if ($state.current.name == 'link.step-1') {
-      alert('1');
-      // $state.go(backState($state.current.name));
+      $rootScope.shootedPhotos = 0;
+      $state.go(backState($state.current.name));
     } else {
       $state.go(backState($state.current.name));
     }
@@ -247,7 +247,15 @@ angular.module('photoApp', ['ui.router'])
         var theCheckboxes = $("input[type='checkbox']");
         var CheckboxArray = [];
         theCheckboxes.click(function(){
-          CheckboxArray.push($(this).attr('id'));
+          if (!$(this).is(":checked")) {
+            var id = $(this).attr('id');
+            var index = CheckboxArray.indexOf(id);
+            if (index > -1) {
+                CheckboxArray.splice(index, 1);
+            }
+          } else {
+            CheckboxArray.push($(this).attr('id'));
+          }
           var id = CheckboxArray.slice(0)[0];
           console.log(CheckboxArray[0]);
           if (theCheckboxes.filter(":checked").length > 3) {
@@ -273,6 +281,10 @@ angular.module('photoApp', ['ui.router'])
           if ($body.hasClass('main-layout')){
             $body.removeClass('main-layout');
             $bodyClass();
+          }
+          if ($body.hasClass('cancel-layout')){
+            $body.removeClass('cancel-layout');
+            $bodyClass();
           } else {
             $bodyClass();
           }
@@ -281,6 +293,9 @@ angular.module('photoApp', ['ui.router'])
           $body.removeClass('layout-is-open ' + type + '-layout');
         }
       }
+      $doc.on('click touch touchstart', '.js-close, .begin', function(){
+        modalOpen('cancel','hide');
+      });
       $doc.on('click touch touchstart', '.js-open-layout', function(){
         var $type, $link;
         $link = $(this);

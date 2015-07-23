@@ -287,25 +287,28 @@
 }
 
 @-webkit-keyframes printAnimation {
-  100% { background-position: -1764px 0px; }
+  100% { background-position: -1763px 0px; }
 }
 
 @-moz-keyframes printAnimation {
-  100% { background-position: -1764px 0px; }
+  100% { background-position: -1763px 0px; }
 }
 
 
 .panda-animation:after {
-  -webkit-animation: pandaAnimation .8s steps(3) infinite;
-  -moz-animation: pandaAnimation .8s steps(5) infinite;
-  -o-animation: pandaAnimation .8s steps(5) infinite;
-  animation: pandaAnimation .8s steps(5) infinite;
+  -webkit-animation: pandaAnimation 1s steps(5) infinite;
+  -moz-animation: pandaAnimation 1s steps(5) infinite;
+  -o-animation: pandaAnimation 1s steps(5) infinite;
+  animation: pandaAnimation 1s steps(5) infinite;
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 @-webkit-keyframes pandaAnimation {
-  100% { background-position: 0px 0px; }
+  100% { background-position: -3810px 0px; }
 }
 
 @-moz-keyframes pandaAnimation {
-  100% { background-position: 0px 0px; }
+  100% { background-position: -3810px 0px; }
 }
