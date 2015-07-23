@@ -150,6 +150,30 @@ angular.module('photoApp', ['ui.router'])
             alert('Error. Nothing pass from states.');
     }
   };
+  var backState=function(currentState) {
+    switch (currentState) {
+        case 'link.step-1':
+            return 'link.start'
+            break;
+        case 'link.step-2':
+            return 'link.step-1'
+            break;
+        case 'link.step-3':
+            return 'link.step-2'
+            break;
+        case 'link.step-4':
+            return 'link.step-3'
+            break;
+        case 'link.finish':
+            return 'link.step-4'
+            break;
+        default:
+            alert('Error. Nothing pass from states.');
+    }
+  };
+  $scope.startWork=function(){
+    $state.go(nextState($state.current.name));
+  }
   $scope.goToNextSection=function($event) {
     if (angular.element($event.target).hasClass('is-active')){
       $state.go(nextState($state.current.name));
@@ -174,10 +198,16 @@ angular.module('photoApp', ['ui.router'])
     if ($('.shoot-act-bg').hasClass('is-animated')) {
       return false;
     } else {
-        angular.element($event.target).addClass('is-animated');
+        $('.shoot-act-bg').addClass('is-animated');
+        $('.photo-preview').addClass('is-animated');
+        $('.layout-attention').addClass('is-opened');
         setTimeout(function(){
+          $('.layout-attention').removeClass('is-opened');
+        },2800);
+        setTimeout(function(){
+          $('.photo-preview').removeClass('is-animated');
           $('.shoot-act-bg').removeClass('is-animated');
-        }, 3200);
+        }, 3800);
         $rootScope.shootedPhotos += 1;
     }
     if ($rootScope.shootedPhotos >= 3) {
@@ -186,6 +216,10 @@ angular.module('photoApp', ['ui.router'])
     if ($rootScope.shootedPhotos >= 9) {
       $rootScope.shootedPhotos = 9
     }
+  }
+  $scope.print = function(){
+    if ($rootScope.pickedPhotos == 1) 
+      $state.go(nextState($state.current.name));
   }
   $scope.$watch('formData', function(newVal, oldVal){
     // console.log($rootScope.formData);
@@ -221,9 +255,16 @@ angular.module('photoApp', ['ui.router'])
 
       setTimeout(function(){
         var theCheckboxes = $("input[type='checkbox']");
+        var CheckboxArray = [];
         theCheckboxes.click(function(){
-          if (theCheckboxes.filter(":checked").length > 3)
-              $(this).removeAttr("checked");
+          CheckboxArray.push($(this).attr('id'));
+          var id = CheckboxArray.slice(0)[0];
+          console.log(CheckboxArray[0]);
+          if (theCheckboxes.filter(":checked").length > 3) {
+              // $(this).removeAttr("checked");
+              $('.gallery-images').find('input#' + id).removeAttr("checked");
+              CheckboxArray.shift();
+            }
           });
       }, 500);
 

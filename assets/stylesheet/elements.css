@@ -115,6 +115,9 @@
   left: -2px;
   top: -2px;
 }
+.shoot-act-bg.is-animated {
+  z-index: 16;
+}
 .shoot-act-bg.is-animated:after {
   animation: none;
   -webkit-animation: none;
@@ -133,6 +136,7 @@
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   position: relative;
+  z-index: 16;
 }
 .number {
   position: absolute;
@@ -162,4 +166,58 @@
 }
 .n-3:before {
   content: '3';
+}
+
+.shooted-number {
+  font-size: 48px;
+  line-height: 2;
+  color: #fff;
+}
+.photo-preview {
+  position: relative;
+}
+.photo-preview:after {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  content: '';
+  width: 762px;
+  height: 530px;
+  display: block;
+  left: 50%;
+  margin-left: -381px;
+  margin-top: -265px;
+  top: 50%;
+  background: url(../images/photo-done.png) no-repeat center center scroll;
+}
+.layout-attention {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  background: rgba(246,174,26,.8);
+  color: #fff;
+  text-align: center;
+  padding-top: 80px;
+  display: none;
+}
+.layout-attention.is-opened {
+  display: block;
+}
+.layout-attention h1 {
+  font-size: 120px;
+}
+.layout-attention h2 {
+  font-size: 169px;
+}
+
+.print-animation {
+  width: 881px;
+  height: 748px;
+  margin: 0 auto;
+  background-image: url(../images/print-animation.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }

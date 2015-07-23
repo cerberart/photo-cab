@@ -1,6 +1,6 @@
 <div class="middle logo">
   <img src="/assets/images/main-heading.png" alt="Фотокабина" height="212" width="705">
-  <p>Выберите 3 фото для печати</p>
+  <p class="l-1">Выберите 3 фото для печати</p>
 </div>
 <div class="gallery-images">
   <div class="shooted-images-preview" ng-click="checkListChecboxes()" ng-repeat="photo in photos | limitTo:9" style="background-image: url('{{photo.url}}')"><input type="checkbox" name="{{$index}}" id="{{$index}}" ng-model="formData[photo.id]"><label for="{{$index}}"></label></div>
@@ -12,8 +12,8 @@
   <ul>
     <li><a ui-sref="link.step-1" class="is-active"><</a></li>
     <li>
-      <a href="#" ng-click="print()">
-        <div class="choose-photos" ng-class="{ 'is-active' : pickedPhotos == 1}"><span class="non-active-text">Выберите 3 фото</span><span class="active-text">Печатать</span></div>
+      <a>
+        <div class="choose-photos" ng-click="print()" ng-class="{ 'is-active' : pickedPhotos == 1}"><span class="non-active-text">Выберите 3 фото</span><span class="active-text">Печатать</span></div>
       </a>
     </li>
     <li><a href="#" ng-click="print()" ng-class="{ 'is-active' : pickedPhotos == 1 }" class="next-step">></a></li>

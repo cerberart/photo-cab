@@ -41,6 +41,10 @@ body {
   z-index: 5;
 }
 .middle.logo p {
+  font: 400 48px/1 'Fira Sans', Arial, Helvetica;
+  color: #fff;
+}
+.middle.logo p.l-1 {
   font: 400 48px/1px 'Fira Sans', Arial, Helvetica;
   color: #fff;
 }

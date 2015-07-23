@@ -253,4 +253,43 @@
 }
 
 
+.photo-preview.is-animated:after {
+  -webkit-animation: scaleDone 1s 1;
+  -moz-animation: scaleDone 1s 1;
+  -o-animation: scaleDone 1s 1;
+  animation: scaleDone 1s 1;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  animation-delay: 3s;
+}
+@-webkit-keyframes scaleDone {
+  0% { opacity: 1; visibility: visible;}
+  50% { transform: scale(1.2); }
+  75% { transform: scale(1.5); }
+  100% { transform: scale(2); opacity: 0; }
+}
 
+@-moz-keyframes scaleDone {
+  0% { opacity: 1; visibility: visible;}
+  50% { transform: scale(1.2); }
+  75% { transform: scale(1.5); }
+  100% { transform: scale(2); opacity: 0; }
+}
+.print-animation {
+  -webkit-animation: printAnimation .9s steps(2) infinite;
+  -moz-animation: printAnimation .9s steps(2) infinite;
+  -o-animation: printAnimation .9s steps(2) infinite;
+  animation: printAnimation .9s steps(2) infinite;
+}
+
+@-webkit-keyframes printAnimation {
+  100% { background-position: -1764px 0px; }
+}
+
+@-moz-keyframes printAnimation {
+  100% { background-position: -1764px 0px; }
+}
