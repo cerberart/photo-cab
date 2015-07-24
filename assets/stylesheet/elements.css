@@ -119,16 +119,22 @@
   z-index: 16;
 }
 .shoot-act-bg.is-animated:after {
-  animation: none;
+/*  animation: none;
   -webkit-animation: none;
   -moz-animation: none;
   -o-animation: none;
-  -ms-animation: none;
+  -ms-animation: none;*/
 }
 .is-animated .shoot-act {
   background-image: none;
+  transition: all .8s ease;
+  -webkit-transition: all .8s ease;
+  -moz-transition: all .8s ease;
 }
 .shoot-act {
+  transition: all .8s ease;
+  -webkit-transition: all .8s ease;
+  -moz-transition: all .8s ease;
   width: 296px;
   height: 296px;
   background: url(../images/panda-action.png) no-repeat center center scroll #fff;
@@ -144,11 +150,15 @@
   top: 54px;
   left: 115px;
   opacity: 0;
+  visibility: hidden;
+}
+.is-animated .number {
+  visibility: visible;
 }
 .number:before {
   width: 296px;
   height: 296px;
-  background: #fff;
+  /*background: #fff;*/
   opacity: .9;
   border-radius: 50%;
   -moz-border-radius: 50%;
@@ -157,6 +167,7 @@
   left: -115px;
   top: -54px;
   line-height: 1.8;
+  transform: scale(2.5);
 }
 .n-1:before {
   content: '3';
@@ -278,5 +289,5 @@
 .button-step-1.begin {
   color: #666666;
   background: #fff;
-  margin-right: 28px;
+  margin-right: 22px;
 }

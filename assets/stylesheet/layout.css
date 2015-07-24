@@ -13,8 +13,6 @@ body {
 
 .container {
   height: 100%;
-  width: 1080px;
-  border: 1px solid #000;
   margin: 0 auto;
   position: absolute;
   z-index: 1;
@@ -22,7 +20,6 @@ body {
   bottom:0;
   left:0;
   right: 0;
-  overflow: scroll;
 }
 .nav {
   height: 170px;
@@ -56,6 +53,7 @@ html {
 }
 .back-layout-panda {
   background: url(../images/panda.png) repeat 0 0;
+  opacity: 0.4;
   position: fixed;
   bottom:-100%;
   top:-100%;
@@ -99,7 +97,6 @@ html {
 .layout-is-open .modal-bg, .layout-is-open .modal-block  {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
   transition: all .8s linear;
   -webkit-transition: all .8s linear;
   -o-transition: all .8s linear;
@@ -116,7 +113,6 @@ html {
   -webkit-transition: all .8s linear;
   -o-transition: all .8s linear;
   -moz-transition: all .8s linear;
-  transform: translateY(-200%);
   position: fixed;
   z-index: 17;
   top: 0;
@@ -139,7 +135,6 @@ html {
   animation-delay: .8s;
 }
 .modal-block-content {
-  overflow: scroll;
   padding-left: 62px;
   padding-right: 70px;
 }
@@ -223,11 +218,15 @@ html {
 .photo-action-controls ul li:first-child a,
 .photo-action-controls ul li:last-child a {
   opacity: 0.5;
+  position: relative;
+  z-index: 15;
 }
 
 .photo-action-controls ul li:first-child a.is-active,
 .photo-action-controls ul li:last-child a.is-active  {
   opacity: 1;
+  position: relative;
+  z-index: 15;
 }
 .photo-action-controls ul li {
   display: table-cell;
