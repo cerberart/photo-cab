@@ -282,7 +282,8 @@ html {
   margin-top: 80px;
 }
 
-.link-step-3 .middle.logo p:first-of-type {
+.link-step-3 .middle.logo p:first-of-type,
+.link-step-4 .middle.logo p:first-of-type {
   margin-top: 0;
 }
 .footer-qr {
