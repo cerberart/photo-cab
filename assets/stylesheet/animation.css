@@ -297,18 +297,21 @@
   100% { transform: scale(2); opacity: 0; }
 }
 .print-animation {
-  -webkit-animation: printAnimation .9s steps(2) infinite;
-  -moz-animation: printAnimation .9s steps(2) infinite;
-  -o-animation: printAnimation .9s steps(2) infinite;
-  animation: printAnimation .9s steps(2) infinite;
+  -webkit-animation: printAnimation 1.2s steps(12) infinite;
+  -moz-animation: printAnimation 1.2s steps(12) infinite;
+  -o-animation: printAnimation 1.2s steps(12) infinite;
+  animation: printAnimation 1.2s steps(12) infinite;
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  animation-delay: .3s;
 }
 
 @-webkit-keyframes printAnimation {
-  100% { background-position: -1763px 0px; }
+  100% { background-position: -10572px 0px; }
 }
 
 @-moz-keyframes printAnimation {
-  100% { background-position: -1763px 0px; }
+  100% { background-position: -10572px 0px; }
 }
 
 

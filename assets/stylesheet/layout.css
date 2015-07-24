@@ -143,6 +143,9 @@ html {
   padding-left: 30px;
   vertical-align: middle;
 }
+.modal-block-content table.footer-qr tr td:last-child {
+  padding-left: 0;
+}
 .modal-block-content table .heading-64,
 .modal-block-content table .text-48 {
   margin-top: 0;
@@ -179,13 +182,21 @@ html {
   margin-top: 260px;
 }
 
-.modal-block-content.carrot p{
+.modal-block-content.carrot>p{
   margin-top: 0px;
   margin-bottom: 15px;
 }
 
+.modal-block-content.main>p:first-of-type {
+  margin: 0px;
+  margin-top: 5px;
+}
+
+.modal-block-content.main p:nth-of-type(2){
+  margin-top: 5px;
+}
 .modal-block-content.main {
-  padding-right: 60px;
+  padding-right: 20px;
   color: #ffffff;
   padding-top: 214px;
 }
@@ -227,6 +238,10 @@ html {
   opacity: 1;
   position: relative;
   z-index: 15;
+}
+.link-step-2 .photo-action-controls ul,
+.link-step-2 .photo-action-controls ul li {
+  height: 360px;
 }
 .photo-action-controls ul li {
   display: table-cell;
@@ -281,6 +296,7 @@ html {
   margin-top: 80px;
 }
 
+.link-step-2 .middle.logo p:first-of-type,
 .link-step-3 .middle.logo p:first-of-type,
 .link-step-4 .middle.logo p:first-of-type {
   margin-top: 0;
@@ -288,6 +304,9 @@ html {
 .footer-qr {
   text-align: left;
   color: #fff;
+}
+.footer-qr .qr img {
+  padding: 50px;
 }
 .footer-qr .qr {
   margin-right: 32px;

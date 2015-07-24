@@ -80,8 +80,8 @@
   font-size: 48px;
   width: 525px;
   height: 135px;
-  background: rgba(255,255,255,.9);
-  color: rgba(246,174,26,0.6);
+  background: rgba(255,255,255,.5);
+  color: #e89224;
   position: relative;
   border-radius: 15px;
   text-align: center;
@@ -233,7 +233,7 @@
   width: 880px;
   height: 748px;
   margin: 0 auto;
-  background-image: url(../images/print-animation.png);
+  background-image: url(../images/print-anima.png);
   background-repeat: no-repeat;
   background-position: 0 0;
   margin-bottom: 122px;
